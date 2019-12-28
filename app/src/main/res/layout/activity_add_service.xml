@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddServiceActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/app_bar"
+            android:layout_alignParentTop="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.AppBarOverlay"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <TextView
+            android:text="Add Service Details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_bar"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/service_header"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Date:"
+              android:id="@+id/date_text"
+              android:layout_below="@+id/service_header"
+              android:textSize="20sp"
+              android:layout_marginTop="30dp"
+              android:layout_marginStart="20dp"
+              android:layout_marginEnd="20dp"
+              android:layout_marginBottom="20dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Time:"
+              android:id="@+id/time_text"
+              android:layout_below="@+id/date_text"
+              android:textSize="20sp"
+              android:layout_margin="20dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="Notes:"
+              android:id="@+id/notes_text"
+              android:layout_below="@+id/time_text"
+              android:textSize="20sp"
+              android:layout_margin="20dp"/>
+
+    <EditText android:layout_width="wrap_content" android:layout_height="38dp"
+              android:inputType="textMultiLine"
+              android:layout_below="@+id/time_text"
+              android:layout_marginEnd="29dp"
+              android:layout_marginTop="30dp"
+              android:layout_marginBottom="-69dp"
+              android:layout_alignParentEnd="true"
+              android:layout_marginStart="20dp"
+              android:id="@+id/notes_edit"
+              android:layout_alignBottom="@+id/time_picker" android:layout_toEndOf="@+id/time_text"/>
+    <EditText
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:layout_toEndOf="@+id/date_text"
+            android:layout_below="@+id/service_header"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="0dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@id/time_picker"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/date_picker"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="time"
+            android:layout_toEndOf="@+id/time_text"
+            android:layout_below="@+id/date_text"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/time_picker"/>
+
+    <Button
+            android:text="Add Service Details to Timeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_service_button"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/notes_text"
+            android:gravity="center"
+            android:elevation="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_alignParentEnd="true"/>
+</RelativeLayout>

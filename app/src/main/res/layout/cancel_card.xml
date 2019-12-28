@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:padding="10dp"
+              android:id="@+id/cancel_include_in"
+              android:layout_height="wrap_content">
+
+    <TextView
+            android:textSize="12sp"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+    android:text="All Reservations made through CarFitBit are guaranteed. Your parking space will be waiting for you when you arrive. If for any reason your reservation is not honoured, please contact us."/>
+
+</LinearLayout>

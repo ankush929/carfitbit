@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:padding="10dp"
+              android:orientation="vertical"
+              android:id="@+id/amenities_include_in"
+
+              android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_marginBottom="15dp">
+
+        <TextView
+                android:id="@+id/amenities1"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Accesssibile"
+                android:gravity="left"
+                android:drawablePadding="15dp"
+                android:drawableStart="@drawable/accessable_icon"
+                android:layout_weight="1"
+                android:textSize="12sp"/>
+        <TextView
+
+                android:id="@+id/amenities2"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Covered Parking"
+                android:textSize="12sp"
+                android:gravity="left"
+                android:drawablePadding="15dp"                android:layout_weight="1"
+                android:drawableStart="@drawable/covered_icon"
+        />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">
+
+        <TextView
+                android:id="@+id/amenities3"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="On-Site Staff  "
+                android:layout_weight="1"
+                android:gravity="left"
+                android:drawablePadding="15dp"                android:drawableStart="@drawable/on_site_icon"
+                android:textSize="12sp"/>
+        <TextView
+
+                android:id="@+id/amenities4"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Overnight Parking"
+                android:textSize="12sp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:drawablePadding="15dp"                android:drawableStart="@drawable/overnight_parking_icon"
+        />
+    </LinearLayout>
+
+</LinearLayout>
