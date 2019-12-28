@@ -82,7 +82,7 @@ public class Maps extends AppCompatActivity implements GoogleMap.OnMarkerClickLi
     private static final int DEFAULT_ZOOM = 15;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private Location mLastKnownLocation;
-
+    Point displaySize;
 
 
     @RequiresApi(api = Build.VERSION_CODES.P)
@@ -101,7 +101,10 @@ public class Maps extends AppCompatActivity implements GoogleMap.OnMarkerClickLi
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
-        initTab();
+        displaySize = new Point();
+        getWindowManager().getDefaultDisplay().getSize(displaySize);
+
+
         initMap();
     }
 
@@ -139,12 +142,15 @@ public class Maps extends AppCompatActivity implements GoogleMap.OnMarkerClickLi
 
         markerList=PLatLong;
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
         mapCard = findViewById(R.id.maps_card_layout);
         mapCard.setOnClickListener(this);
 
         ImageButton nav = findViewById(R.id.nav);
         nav.setOnClickListener(this);
+
+
     }
 
     private void initTab() {
@@ -162,13 +168,9 @@ public class Maps extends AppCompatActivity implements GoogleMap.OnMarkerClickLi
         tabLayout.addTab(parkingTab);
         tabLayout.addTab(towTab);
         tabLayout.addTab(fuelTab);
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
-                Point displaySize = new Point();
-                getWindowManager().getDefaultDisplay().getSize(displaySize);
 
                 if(tab.getText()=="Tow")
                 {
@@ -214,6 +216,7 @@ public class Maps extends AppCompatActivity implements GoogleMap.OnMarkerClickLi
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
     }
@@ -239,6 +242,8 @@ public class Maps extends AppCompatActivity implements GoogleMap.OnMarkerClickLi
             updateLocationUI();
 
             getDeviceLocation();
+
+            initTab();
 
         }
     }
